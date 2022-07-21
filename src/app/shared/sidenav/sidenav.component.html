@@ -1,0 +1,16 @@
+<mat-sidenav #sidenav mode="over">
+  <mat-toolbar color="primary">
+    <span>Menu</span>
+  </mat-toolbar>
+  <mat-nav-list>
+    <a routerLink="/dashboard" mat-list-item (click)="sidenav.toggle()">
+      <span>Dashboard</span>
+    </a>
+    <a routerLink="/ventas" mat-list-item (click)="sidenav.toggle()">
+      <span>Ventas</span>
+    </a>
+    <a routerLink="/productos" mat-list-item (click)="sidenav.toggle()">
+      <span>Productos</span>
+    </a>
+  </mat-nav-list>
+</mat-sidenav>

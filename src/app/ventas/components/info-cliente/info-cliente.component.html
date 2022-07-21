@@ -1,0 +1,30 @@
+<div
+  fxLayout="column"
+  fxLayout.gt-xs="row wrap"
+  fxLayoutAlign="space-around stretch"
+  fxLayoutAlign.gt-xs="space-between center">
+
+  <mat-form-field appearance="outline" fxFlex="30">
+    <mat-label>Nombres</mat-label>
+    <input matInput [value]="cliente.nombres" readonly>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" fxFlex="30">
+    <mat-label>Apellidos</mat-label>
+    <input matInput [value]="cliente.apellidos" readonly>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" fxFlex="30">
+    <mat-label>DNI</mat-label>
+    <input matInput [value]="cliente.dni" readonly>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" fxFlex="30">
+    <mat-label>Telefono</mat-label>
+    <input matInput [value]="cliente.telefono" readonly>
+  </mat-form-field>
+  <mat-form-field appearance="outline" fxFlex="30">
+    <mat-label>Email</mat-label>
+    <input matInput [value]="cliente.email" readonly>
+  </mat-form-field>
+</div>

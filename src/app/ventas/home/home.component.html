@@ -1,0 +1,60 @@
+<h1>ADMINISTRAR VENTAS</h1>
+
+<div fxLayoutGap="1rem" fxLayoutAlign="center center">
+  <mat-form-field appearance="standard">
+    <mat-label>Enter a date range</mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+      <input matStartDate placeholder="Start date" [(ngModel)]="date.dateStart" >
+      <input matEndDate placeholder="End date" [(ngModel)]="date.dateEnd" >
+    </mat-date-range-input>
+    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="search()">
+    <mat-icon>search</mat-icon>
+    Buscar
+  </button>
+</div>
+
+<div class="mat-elevation-z8 box-table">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="cliente.nombres">
+      <th mat-header-cell *matHeaderCellDef>nombres</th>
+      <td mat-cell *matCellDef="let element"> {{element.cliente.nombres}} </td>
+    </ng-container>
+    <ng-container matColumnDef="fecha">
+      <th mat-header-cell *matHeaderCellDef>Fecha</th>
+      <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+    </ng-container>
+    <ng-container matColumnDef="total">
+      <th mat-header-cell *matHeaderCellDef>Total</th>
+      <td mat-cell *matCellDef="let element">
+        {{calcularTotal(element.detallesVenta)?.toFixed(2)}}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef class="center">Acciones</th>
+      <td mat-cell *matCellDef="let element" class="center">
+        <button mat-button color="primary" (click)="openDialog(element.id)">Ver detalles</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+  <mat-paginator
+    #paginator
+    color="primary"
+    [length]="length"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="mostrarMas($event)"
+    pageSize="5"
+    showFirstLastButtons
+    aria-label="Selecciona pagina de ventas">
+  </mat-paginator>
+
+</div>

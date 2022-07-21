@@ -1,0 +1,16 @@
+<div class="mat-elevation-z8 form-box" fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="1rem">
+  <h2>{{producto.id ? 'Actualizar' : 'Agregar'}} un producto</h2>
+  <form fxLayout="column" fxLayoutAlign="center" fxLayoutGap="1rem" (submit)="submit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre</mat-label>
+      <input matInput type="text" name="nombre" [(ngModel)]="producto.nombre">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Precio</mat-label>
+      <input matInput type="number" step="0.01" min="0.01" name="precio" [(ngModel)]="producto.precio">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">{{producto.id ? 'Actualizar' : 'Guardar'}}</button>
+  </form>
+  <button mat-raised-button color="accent" (click)="openDialog()" *ngIf="producto.id">Eliminar</button>
+  <button mat-raised-button routerLink="/productos">Cancelar</button>
+</div>

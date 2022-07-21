@@ -1,0 +1,45 @@
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <h2>Detalles de la venta</h2>
+  <button mat-icon-button (click)="cerrar()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<div *ngIf="venta">
+
+  <mat-accordion class="example-headers-align" multi>
+
+   <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>Información del cliente</mat-panel-title>
+      <mat-panel-description>
+        {{venta.fecha}}
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-info-cliente [cliente]="venta.cliente"></app-info-cliente>
+    
+   </mat-expansion-panel>
+
+
+   <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>Productos vendidos</mat-panel-title>
+      <mat-panel-description>
+        Precio total: {{calcularTotal() ?? '0'}}
+        <mat-icon>sales</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-table-detalles-venta [detallesVenta]="venta.detallesVenta"></app-table-detalles-venta>
+
+   </mat-expansion-panel>
+
+
+  </mat-accordion>
+  
+  
+
+  
+</div>
