@@ -23,19 +23,19 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ##Ventas
 
-##1. Paginación
+###1. Paginación
 ![Alt Text](https://media.giphy.com/media/20kN4lSna8HwEH2jb6/giphy.gif)
 
-##2. Ver detalles
+###2. Ver detalles
 ![Alt Text](https://media.giphy.com/media/9OlyCBQ3Nm7kxRXlsD/giphy.gif)
 
 ##3. Filtrar por fecha
 ![Alt Text](https://media.giphy.com/media/w5PcGlFxZzbLtQ9VHt/giphy.gif)
 
-##Productos
+###Productos
 
-##1. Editar y Agregar producto: 
+###1. Editar y Agregar producto: 
 ![Alt Text](https://media.giphy.com/media/1ETKj2LHTIk3Qy7TaZ/giphy.gif)
 
-##2. Eliminar  producto:
+###2. Eliminar  producto:
 ![Alt Text](https://media.giphy.com/media/AZuix3WOc5sPucw6xg/giphy.gif)
